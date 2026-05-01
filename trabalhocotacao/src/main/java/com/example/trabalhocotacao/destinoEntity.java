@@ -8,10 +8,11 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 
 @Entity
-@Table(name="products")
+@Table(name="destino")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
