@@ -45,4 +45,7 @@ public class destinoEntity {
     @OneToMany(mappedBy = "destino", cascade = CascadeType.ALL)
     private List<reservaEntity> reservas;
 
+    @ManyToMany(mappedBy = "destinos")
+    private Set<cotacaoEntity> cotacoes = new HashSet<>();
+
 }

@@ -5,7 +5,8 @@ public record criarClienteDTO (
 
     String email,
 
-    String telefone
+    String telefone,
 
+    String cpf
     ){
 }

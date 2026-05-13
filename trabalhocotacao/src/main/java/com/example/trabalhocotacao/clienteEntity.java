@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="clientes")
 @Builder
@@ -31,4 +33,7 @@ public class clienteEntity {
     @Pattern(regexp = "^\\d+$", message = "O CPF deve conter apenas números")
     @Size (min = 11, max = 11, message = "O CPF deve conter 11 números")
     private String cpf;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<cotacaoEntity> cotacao;
 }
