@@ -29,6 +29,6 @@ public class clienteEntity {
     private String telefone;
 
     @Pattern(regexp = "^\\d+$", message = "O CPF deve conter apenas números")
-    @Size (min = 10, max = 11, message = "O CPF deve conter 11 números")
+    @Size (min = 11, max = 11, message = "O CPF deve conter 11 números")
     private String cpf;
 }
