@@ -7,9 +7,9 @@ import java.util.Set;
 public record consultarCotacaoDTO(
         Long id,
 
-        clienteEntity cliente,
+        listarClienteDTO cliente,
 
-        Set<destinoEntity> destino,
+        Set<listarDestinoDTO> destino,
 
         LocalDateTime dataIda,
 

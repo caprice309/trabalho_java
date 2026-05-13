@@ -5,9 +5,9 @@ import java.util.Set;
 
 public record criarCotacaoDTO(
 
-    clienteEntity cliente_id,
+    Long cliente_id,
 
-    Set<destinoEntity> destino_id,
+    Set<Long> destino_id,
 
     LocalDateTime dataIda,
 
