@@ -30,11 +30,11 @@ public class destinoEntity {
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
-    @ElementCollection(targetClass = Category.class)
+    /*@ElementCollection(targetClass = Category.class)
     @CollectionTable(name = "destino_categorias", joinColumns = @JoinColumn(name = "destino_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "categoria")
-    private Set<Category> categoria = new HashSet<>();
+    private HashSet<Category> categoria = new HashSet<>();*/
 
     private String destino;
 
