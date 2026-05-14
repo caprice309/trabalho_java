@@ -2,7 +2,7 @@ package com.example.trabalhocotacao;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.PositiveOrZero;
-import jdk.jfr.Category;
+import com.example.trabalhocotacao.categoria;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -30,11 +30,11 @@ public class destinoEntity {
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
-    /*@ElementCollection(targetClass = Category.class)
+    @ElementCollection(targetClass = categoria.class)
     @CollectionTable(name = "destino_categorias", joinColumns = @JoinColumn(name = "destino_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "categoria")
-    private HashSet<Category> categoria = new HashSet<>();*/
+    private HashSet<categoria> categoria = new HashSet<>();
 
     private String destino;
 

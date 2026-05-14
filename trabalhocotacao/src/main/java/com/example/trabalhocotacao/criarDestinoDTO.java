@@ -1,6 +1,6 @@
 package com.example.trabalhocotacao;
 
-import jdk.jfr.Category;
+import com.example.trabalhocotacao.categoria;
 
 import java.util.HashSet;
 import java.util.List;
@@ -11,7 +11,7 @@ public record criarDestinoDTO(
 
         String descricao,
 
-        Set<Category> categoria,
+        Set<categoria> categoria,
 
         List<criarReservaDTO> reservas
 ) {

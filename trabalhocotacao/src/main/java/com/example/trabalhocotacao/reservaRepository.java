@@ -10,9 +10,9 @@ import java.util.Optional;
 @Repository
 public interface reservaRepository extends JpaRepository<reservaEntity, Long> {
 
-    @Query("SELECT r FROM ReservaEntity r WHERE r.destino.id = :destinoId AND r.id = :reservaId")
-    Optional<reservaEntity> findByDestinoIdAndReservaId(
-            @Param("destinoId") Long destinoId,
+    @Query("SELECT r FROM reservaEntity r WHERE r.cotacao.id = :cotacaoId AND r.id = :reservaId")
+    Optional<reservaEntity> findByCotacaoIdAndReservaId(
+            @Param("cotacaoId") Long cotacaoId,
             @Param("reservaId") Long reservaId
     );
 }

@@ -1,6 +1,6 @@
 package com.example.trabalhocotacao;
 
-import jdk.jfr.Category;
+import com.example.trabalhocotacao.categoria;
 
 import java.math.BigDecimal;
 import java.util.Set;
@@ -12,6 +12,6 @@ public record updtDestinoDTO(
 
         BigDecimal precoPorPessoa,
 
-        Set<Category> categoria
+        Set<categoria> categoria
 ) {
 }
