@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 public record udptCotacaoDTO(
-        Long cliente_id,
+        clienteEntity cliente_id,
 
-        Set<Long> destino_id,
+        Set<destinoEntity> destino_id,
 
         LocalDateTime dataIda,
 

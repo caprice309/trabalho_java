@@ -3,6 +3,7 @@ package com.example.trabalhocotacao;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="reservas")
@@ -18,11 +19,9 @@ public class reservaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nomeCliente;
+    private String status;
 
-    private LocalDate dataViagem;
-
-    @ManyToOne
-    @JoinColumn(name = "destino_id")
-    private destinoEntity destino;
+    @OneToOne
+    @JoinColumn(name = "cotacao_id", unique = true, nullable = false)
+    private cotacaoEntity cotacao;
 }

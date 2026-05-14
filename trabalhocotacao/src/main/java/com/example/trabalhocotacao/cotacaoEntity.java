@@ -3,6 +3,7 @@ package com.example.trabalhocotacao;
 import jakarta.persistence.*;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -26,7 +27,7 @@ public class cotacaoEntity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name ="cliente_id")
+    @JoinColumn(name ="cliente_id", nullable = false)
     private clienteEntity cliente;
 
     @ManyToMany
@@ -36,6 +37,10 @@ public class cotacaoEntity {
             inverseJoinColumns = @JoinColumn(name = "destino_id")
     )
     private Set<destinoEntity> destinos = new HashSet<>();
+
+    @PositiveOrZero(message = "O preço deve ser positivo")
+    @Column(precision = 10, scale = 2)
+    private BigDecimal precoPorData;
 
     private LocalDateTime dataIda;
 
