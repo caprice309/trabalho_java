@@ -3,7 +3,7 @@ package com.example.trabalhocotacao;
 import java.math.BigDecimal;
 
 public record criarPagamentoDTO(
-        cotacaoEntity cotacao_id,
+        Long cotacao_id,
 
         BigDecimal valorPago,
 

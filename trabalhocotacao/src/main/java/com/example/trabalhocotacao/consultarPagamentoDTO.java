@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record consultarPagamentoDTO(
-        cotacaoEntity cotacao_id,
+        Long cotacao_id,
 
         BigDecimal valorPago,
 
