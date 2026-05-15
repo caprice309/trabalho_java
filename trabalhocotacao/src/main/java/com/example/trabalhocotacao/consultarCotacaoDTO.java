@@ -2,14 +2,15 @@ package com.example.trabalhocotacao;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 public record consultarCotacaoDTO(
         Long id,
 
-        listarClienteDTO cliente,
+        Long cliente_id,
 
-        Set<listarDestinoDTO> destino,
+        Set<Long> destino_id,
 
         LocalDateTime dataIda,
 
@@ -19,6 +20,8 @@ public record consultarCotacaoDTO(
 
         BigDecimal valorTotal,
 
-        String status
+        String status,
+
+        List<consultarDescontoDTO> descontos
 ) {
 }
