@@ -34,7 +34,7 @@ public class destinoEntity {
     @CollectionTable(name = "destino_categorias", joinColumns = @JoinColumn(name = "destino_id"))
     @Enumerated(EnumType.STRING)
     @Column(name = "categoria")
-    private HashSet<categoria> categoria = new HashSet<>();
+    private Set<categoria> categoria = new HashSet<>();
 
     private String destino;
 
