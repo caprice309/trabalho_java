@@ -10,35 +10,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/clientes")
-public class clienteController {
+@RequestMapping("/api/destinos")
+public class destinoController {
 
     @Autowired
-    private clienteService service;
+    private destinoService service;
 
     @PostMapping
-    public consultarClienteDTO cadastrar(@RequestBody criarClienteDTO dto) {
+    public consultarDestinoDTO cadastrar(@RequestBody criarDestinoDTO dto) {
         return service.criar(dto);
     }
 
     @GetMapping
-    public List<consultarClienteDTO> listar() {
+    public List<consultarDestinoDTO> listar() {
         return service.listarTodos();
     }
 
     @GetMapping("/{id}")
-    public consultarClienteDTO buscarPorId(@PathVariable Long id) {
-        return service.buscarPorId(id);
+    public consultarDestinoDTO buscarPorId(@PathVariable Long id) {
+        return service.consultarPorId(id);
     }
 
     @PutMapping("/{id}")
-    public consultarClienteDTO atualizar(@PathVariable Long id, @RequestBody updtClienteDTO dto) {
+    public consultarDestinoDTO atualizar(@PathVariable Long id, @RequestBody updtDestinoDTO dto) {
         return service.atualizar(id, dto);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void excluir(@PathVariable Long id) {
+    public void remover(@PathVariable Long id) {
         service.excluir(id);
     }
 }

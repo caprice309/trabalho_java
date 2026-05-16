@@ -12,8 +12,6 @@ public record consultarDestinoDTO(
 
         String descricao,
 
-        String destino,
-
         BigDecimal precoPorPessoa,
 
         Set<categoria> categoria

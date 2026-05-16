@@ -15,30 +15,45 @@ public class clienteService {
     private clienteRepository repository;
 
     private consultarClienteDTO toDTO(clienteEntity entity) {
-        return new consultarClienteDTO(
-                entity.getId(),
-                entity.getNome(),
-                entity.getEmail(),
-                entity.getTelefone(),
-                entity.getCpf()
-        );
+        return new consultarClienteDTO(entity.getId(), entity.getNome(), entity.getEmail(), entity.getTelefone(), entity.getCpf());
     }
 
     public consultarClienteDTO criar(criarClienteDTO dto) {
-
         clienteEntity entity = clienteEntity.builder()
                 .nome(dto.nome())
                 .email(dto.email())
                 .telefone(dto.telefone())
                 .cpf(dto.cpf())
                 .build();
-
         return toDTO(repository.save(entity));
     }
 
     public List<consultarClienteDTO> listarTodos() {
-        return repository.findAll().stream()
-                .map(this::toDTO)
-                .collect(Collectors.toList());
+        return repository.findAll().stream().map(this::toDTO).collect(Collectors.toList());
+    }
+
+    public consultarClienteDTO buscarPorId(Long id) {
+        clienteEntity entity = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado com o id: " + id));
+        return toDTO(entity);
+    }
+
+    public consultarClienteDTO atualizar(Long id, updtClienteDTO dto) {
+        clienteEntity entity = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado com o ID: " + id));
+
+        entity.setNome(dto.nome());
+        entity.setEmail(dto.email());
+        entity.setTelefone(dto.telefone());
+        entity.setCpf(dto.cpf());
+
+        return toDTO(repository.save(entity));
+    }
+
+    public void excluir(Long id) {
+        clienteEntity entity = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado com o ID: " + id));
+
+        repository.delete(entity);
     }
 }

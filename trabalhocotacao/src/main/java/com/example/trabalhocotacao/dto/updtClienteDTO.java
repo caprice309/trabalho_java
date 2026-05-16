@@ -5,6 +5,8 @@ public record updtClienteDTO(
 
         String email,
 
-        String telefone
+        String telefone,
+
+        String cpf
 ) {
 }
