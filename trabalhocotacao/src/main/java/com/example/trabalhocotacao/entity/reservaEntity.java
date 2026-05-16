@@ -2,6 +2,7 @@ package com.example.trabalhocotacao.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="reservas")
@@ -19,11 +20,10 @@ public class reservaEntity {
 
     private String status;
 
+    LocalDateTime dataViagem;
+
     @OneToOne
     @JoinColumn(name = "cotacao_id", unique = true, nullable = false)
     private cotacaoEntity cotacao;
 
-    @ManyToOne
-    @JoinColumn(name = "destino_id")
-    private destinoEntity destino;
 }
