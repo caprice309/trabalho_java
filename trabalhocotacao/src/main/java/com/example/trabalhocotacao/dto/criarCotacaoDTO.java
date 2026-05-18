@@ -1,5 +1,4 @@
 package com.example.trabalhocotacao.dto;
-
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -11,7 +10,7 @@ public record criarCotacaoDTO(
 
     LocalDateTime dataIda,
 
-    LocalDateTime dataVolta,
+    LocalDateTime dataRetorno,
 
     Integer numeroDePessoas,
 
