@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record consultarPagamentoDTO(
+        Long id,
+
         Long cotacao_id,
 
         BigDecimal valorPago,
 
-        String status,
+        LocalDateTime dataPagamento,
 
-        LocalDateTime dataPagamento
+        String status
 ) {
 }
