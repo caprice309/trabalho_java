@@ -31,7 +31,6 @@ public class pagamentoService {
         cotacaoEntity cotacao = cotacaoRepo.findById(dto.cotacao_id())
                 .orElseThrow(() -> new RuntimeException("Cotação não encontrada com o ID: " + dto.cotacao_id()));
 
-        // Constrói a entidade de pagamento utilizando o padrão Builder
         pagamentoEntity entity = pagamentoEntity.builder()
                 .cotacao(cotacao)
                 .valorPago(dto.valorPago())
