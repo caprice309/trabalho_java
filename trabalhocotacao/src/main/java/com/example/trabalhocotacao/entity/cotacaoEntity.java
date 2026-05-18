@@ -49,6 +49,7 @@ public class cotacaoEntity {
 
     private String status;
 
+    @Builder.Default
     @OneToMany(mappedBy = "cotacao", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<descontoEntity> descontos = new ArrayList<>();
 
