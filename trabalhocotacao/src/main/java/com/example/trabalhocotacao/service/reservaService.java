@@ -32,6 +32,7 @@ public class reservaService{
 
         reservaEntity entity = reservaEntity.builder()
                 .status(dto.status())
+                .dataViagem(dto.dataViagem())
                 .cotacao(cotacao)
                 .build();
 

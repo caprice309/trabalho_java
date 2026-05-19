@@ -4,6 +4,7 @@ import com.example.trabalhocotacao.repository.*;
 import com.example.trabalhocotacao.entity.*;
 import com.example.trabalhocotacao.dto.*;
 import com.example.trabalhocotacao.service.*;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class clienteController {
     private clienteService service;
 
     @PostMapping
-    public consultarClienteDTO cadastrar(@RequestBody criarClienteDTO dto) {
+    public consultarClienteDTO cadastrar(@Valid @RequestBody criarClienteDTO dto) {
         return service.criar(dto);
     }
 
