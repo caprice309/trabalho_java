@@ -40,7 +40,7 @@ public class cotacaoService {
                 entity.getDataIda(),
                 entity.getDataRetorno(),
                 entity.getNumeroDePessoas(),
-                entity.getValorTotal(), // Nova variável incluída na resposta
+                entity.getValorTotal(),
                 entity.getStatus(),
                 descontosDTO
         );
